@@ -1,0 +1,18 @@
+RewriteEngine On
+RewriteBase /
+RewriteRule ^/index\.php$ - [L]
+RewriteRule ^/favicon\.ico$ - [L]
+
+# If it is a php file, but it is not index.php, pass it as _ROUTE parameter
+RewriteCond %{REQUEST_URI} ^(.*)\.php$
+RewriteCond %{REQUEST_FILENAME} !index.php$
+RewriteRule ^(.*)$ index.php?_ROUTE=$1 [L,QSA]
+
+# If it is other file that exists, serve it
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^(.*)$ - [L,QSA]
+
+# Finally, if the file does not exist nor is a folder, pass it as _ROUTE parameter
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?_ROUTE=$1 [L,QSA]

@@ -1,0 +1,20 @@
+{
+    "name": "myapp/appname",
+    "type": "project",
+    "require": {
+        "ddn/common": "dev-main",
+        "ddn/router": "dev-main"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "myapp\\appname\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Carlos A."
+        }
+    ],
+    "minimum-stability": "dev"
+}

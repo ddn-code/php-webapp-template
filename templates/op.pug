@@ -1,0 +1,15 @@
+// This way we can add css files and js files to the view.
+=add_css_file('https://fonts.googleapis.com/css2?family=Material+Icons&family=Material+Icons+Outlined')
+style.
+    i.material-icons {
+        vertical-align:bottom;
+        display: inline-flex;
+    }
+small before this text is the result prior to rendering the view (i.e. the execution of the operation)
+h1 operations page
+
+// We have access to the operation result via the $_OP_HANDLER global variable
+p= $_OP_HANDLER->get_operation_result()
+a.btn.btn-primary.m-3(role="button" href="/") 
+    i.me-1.material-icons.material-icons-outlined home
+    | home
